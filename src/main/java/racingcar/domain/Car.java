@@ -1,0 +1,34 @@
+package racingcar.domain;
+
+import camp.nextstep.edu.missionutils.Randoms;
+
+public class Car {
+
+    private String name;
+    private int position = 0;
+
+    public Car(String name) {
+        this.name = name;
+    }
+
+    public boolean move() {
+        if (Randoms.pickNumberInRange(0, 9) >= 4) {
+            position++;
+            return true;
+        }
+
+        return false;
+    }
+
+    public String drawPosition() {
+        return name + " : " + "-".repeat(position);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+}
