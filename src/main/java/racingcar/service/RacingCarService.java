@@ -45,7 +45,7 @@ public class RacingCarService {
             throw new IllegalArgumentException("이름은 5자 이하만 가능합니다.");
         }
 
-        if (carList.stream().anyMatch(car -> car.getName().equals(carName))) {
+        if (carList.stream().anyMatch(car -> car.hasName(carName))) {
             throw new IllegalArgumentException("중복된 이름은 사용할 수 없습니다.");
         }
     }

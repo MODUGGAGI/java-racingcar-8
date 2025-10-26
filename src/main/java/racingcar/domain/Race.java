@@ -30,7 +30,7 @@ public class Race {
 
         List<String> winners = new ArrayList<>();
         for (Car car : carList) {
-            addIfWinner(car, maxPosition, winners);
+            car.ifPositionThenGetName(maxPosition).ifPresent(winners::add);
         }
 
         return winners;
@@ -47,14 +47,8 @@ public class Race {
     private int findMaxPosition() {
         int maxPosition = 0;
         for (Car car : carList) {
-            maxPosition = Math.max(maxPosition, car.getPosition());
+            maxPosition = car.getMaxPosition(maxPosition);
         }
         return maxPosition;
-    }
-
-    private void addIfWinner(Car car, int maxPosition, List<String> winners) {
-        if (maxPosition == car.getPosition()) {
-            winners.add(car.getName());
-        }
     }
 }
