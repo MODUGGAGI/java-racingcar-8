@@ -27,8 +27,7 @@ public class Grid {
 
         List<String> winners = new ArrayList<>();
         for (Car car : carList) {
-            car.ifPositionThenGetName(maxPosition)
-                    .ifPresent(winners::add);
+            car.ifPositionThenGetName(maxPosition).ifPresent(winners::add);
         }
 
         return winners;
