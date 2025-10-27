@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ class GridTest {
     }
 
     @Test
+    @DisplayName("레이스 1회 실행한 경우")
     void 레이스_결과_출력_테스트() {
         assertRandomNumberInRangeTest(
             () -> {
@@ -35,6 +37,7 @@ class GridTest {
     }
 
     @Test
+    @DisplayName("우승자가 1명인 경우")
     void 우승자_한명_찾기_테스트() {
         assertRandomNumberInRangeTest(
             () -> {
@@ -47,6 +50,7 @@ class GridTest {
     }
 
     @Test
+    @DisplayName("공동 우승자가 있는 경우")
     void 우승자_여러명_찾기_테스트() {
         assertRandomNumberInRangeTest(
             () -> {
